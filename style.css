@@ -51,6 +51,10 @@ nav {
     font-weight: bold;
 }
 
+.logo svg {
+    margin-right: 10px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -63,7 +67,8 @@ nav {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-gold);
 }
 
@@ -75,6 +80,7 @@ nav {
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
 }
 
 .cta-primary:hover {
@@ -82,13 +88,13 @@ nav {
     box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
 }
 
-/* Hero Section - COMPRESSED */
+/* Hero Section */
 .hero {
     background: var(--deep-black);
     color: white;
     padding: 120px 0 60px;
     text-align: center;
-    min-height: 70vh; /* Reduced from 100vh */
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,18 +105,18 @@ nav {
 }
 
 .hero-lightbulb {
-    margin-bottom: 2rem; /* Reduced from 3rem */
+    margin-bottom: 2rem;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 7vw, 5rem); /* Slightly smaller */
+    font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 300;
     line-height: 1.1;
-    margin-bottom: 1.5rem; /* Reduced from 2rem */
+    margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem); /* Slightly smaller */
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     color: var(--primary-gold);
     font-weight: 300;
     letter-spacing: 1px;
@@ -118,7 +124,7 @@ nav {
 
 /* Animated AOML Logo */
 .lightbulb-svg {
-    width: 300px; /* Reduced from 400px */
+    width: 300px;
     height: 300px;
     margin: 0 auto;
 }
@@ -182,34 +188,6 @@ nav {
     color: var(--text-gray);
     max-width: 600px;
     margin: 0 auto 4rem;
-}
-
-/* NEW: Tally Form Section */
-.form-section {
-    background: linear-gradient(135deg, var(--warm-orange), var(--primary-gold));
-    padding: 60px 0;
-    text-align: center;
-}
-
-.form-container {
-    background: white;
-    border-radius: 20px;
-    padding: 3rem;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.form-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--deep-black);
-}
-
-.form-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: var(--text-gray);
 }
 
 /* Current Projects */
@@ -293,6 +271,30 @@ nav {
     font-style: italic;
 }
 
+.company-name {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.company-name a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.company-name a:hover {
+    text-decoration: underline;
+}
+
+.quote-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.team-quote {
+    font-style: italic;
+    color: var(--text-gray);
+}
+
 /* Contact Section */
 .contact-grid {
     display: grid;
@@ -340,6 +342,10 @@ footer {
     margin-bottom: 1rem;
 }
 
+.powered-by {
+    margin-top: 1rem;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -349,12 +355,18 @@ footer {
 
 .social-links a {
     color: white;
-    font-size: 1.2rem;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
     color: var(--primary-gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    margin-top: 2rem;
 }
 
 /* Call-to-Action Highlighting */
@@ -397,9 +409,5 @@ footer {
     .projects-grid,
     .team-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .form-container {
-        padding: 2rem 1.5rem;
     }
 }
