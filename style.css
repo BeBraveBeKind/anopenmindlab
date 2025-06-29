@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 :root {
@@ -18,6 +20,9 @@ body {
     line-height: 1.6;
     color: var(--text-gray);
     background: var(--warm-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 .container {
@@ -88,6 +93,14 @@ nav {
     box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
 }
 
+/* MailerLite form buttons */
+button.cta-primary {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 /* Hero Section */
 .hero {
     background: var(--deep-black);
@@ -122,6 +135,25 @@ nav {
     letter-spacing: 1px;
 }
 
+.hero-cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero .cta-secondary {
+    background: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.hero .cta-secondary:hover {
+    background: var(--primary-gold);
+    color: var(--deep-black);
+}
+
 /* Animated AOML Logo */
 .lightbulb-svg {
     width: 300px;
@@ -150,6 +182,27 @@ nav {
     50% { 
         opacity: 0.6; 
         transform: scale(1.05);
+    }
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
@@ -190,11 +243,78 @@ nav {
     margin: 0 auto 4rem;
 }
 
+/* Featured Project */
+.featured-project {
+    margin-bottom: 3rem;
+}
+
+.project-card.featured {
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    border: 2px solid var(--primary-gold);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-card.featured .project-header {
+    background: var(--deep-black);
+    position: relative;
+    padding: 2rem 1.5rem;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-gold);
+    color: var(--deep-black);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.project-card.featured .project-body {
+    padding: 2rem;
+}
+
+.featured-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-secondary {
+    background: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--deep-black);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.cta-secondary:hover {
+    background: var(--primary-gold);
+    color: var(--deep-black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
+}
+
 /* Current Projects */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+}
+
+@media (max-width: 400px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -335,6 +455,11 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-section {
+    padding: 0 1rem;
 }
 
 .footer-section h4 {
@@ -390,12 +515,105 @@ footer {
     opacity: 0.9;
 }
 
-/* Responsive Design */
+/* Mobile Menu Button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero h1 {
+        font-size: clamp(2rem, 6vw, 4rem);
+    }
+    
+    .projects-grid,
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
-    .nav-links {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .desktop-cta {
         display: none;
     }
 
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--deep-black);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .featured-buttons {
+        flex-direction: column;
+    }
+    
+    .featured-buttons button,
+    .featured-buttons a {
+        width: 100%;
+    }
+    
+    .featured-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
     .hero {
         padding: 100px 0 40px;
         min-height: 60vh;
@@ -409,5 +627,53 @@ footer {
     .projects-grid,
     .team-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+    
+    .hero-lightbulb {
+        margin-bottom: 1rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .project-card,
+    .team-member,
+    .contact-method {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo span {
+        font-size: 1.2rem;
+    }
+    
+    button.cta-primary {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding: 80px 0 40px;
+    }
+    
+    .lightbulb-svg {
+        width: 150px;
+        height: 150px;
     }
 }

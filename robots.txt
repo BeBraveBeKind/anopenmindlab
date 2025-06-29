@@ -1,0 +1,49 @@
+# robots.txt for An Open Mind Lab
+# https://anopenmindlab.com
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://anopenmindlab.com/sitemap.xml
+
+# Crawl-delay (optional - uncomment if needed)
+# Crawl-delay: 1
+
+# Disallow any admin or private directories (if you add them later)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Social Media Bots (allow for better sharing)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /

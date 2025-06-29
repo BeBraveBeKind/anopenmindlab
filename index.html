@@ -3,8 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>An Open Mind Lab - Community Collaboration Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="An Open Mind Lab - A community collaboration hub in Viroqua, Wisconsin. Join us in reimagining public spaces, including the Eckhart Park Playground project. Where curiosity meets action.">
+    <meta name="keywords" content="community collaboration, Viroqua Wisconsin, Eckhart Park, playground design, community projects, public spaces, An Open Mind Lab, Source Studio, Rise Above Partners">
+    <meta name="author" content="An Open Mind Lab">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anopenmindlab.com/">
+    <meta property="og:title" content="An Open Mind Lab - Community Collaboration Hub">
+    <meta property="og:description" content="Join our community in Viroqua to reimagine public spaces and collaborate on meaningful projects. Featured: Eckhart Park Playground redesign.">
+    <meta property="og:image" content="https://anopenmindlab.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anopenmindlab.com/">
+    <meta property="twitter:title" content="An Open Mind Lab - Community Collaboration Hub">
+    <meta property="twitter:description" content="Join our community in Viroqua to reimagine public spaces and collaborate on meaningful projects.">
+    <meta property="twitter:image" content="https://anopenmindlab.com/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://anopenmindlab.com/">
+    
+    <title>An Open Mind Lab - Community Collaboration Hub | Viroqua, WI</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "An Open Mind Lab",
+      "description": "A community collaboration hub in Viroqua, Wisconsin",
+      "url": "https://anopenmindlab.com",
+      "logo": "https://anopenmindlab.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Viroqua",
+        "addressRegion": "WI",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.instagram.com/anopenmindlab"
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -17,12 +63,17 @@
                 </svg>
                 <span>An Open Mind Lab</span>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#team">Facilitators</a></li>
                 <li><a href="#connect">Connect</a></li>
             </ul>
-            <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Join Us</a>
+            <button class="cta-primary desktop-cta ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Join Us</button>
         </nav>
     </header>
 
@@ -102,6 +153,10 @@
                     </div>
                     <h1>An Open Mind Lab</h1>
                     <p class="hero-subtitle">A place for community collaboration, curiosity and creative problem solving</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="cta-primary">Explore Our Projects</a>
+                        <a href="#join" class="cta-secondary">Join the Community</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -113,18 +168,26 @@
                     Active collaborations where you can contribute your skills, ideas, and energy.
                 </p>
                 
-                <div class="projects-grid">
-                    <div class="project-card">
+                <!-- Featured Project -->
+                <div class="featured-project">
+                    <div class="project-card featured">
                         <div class="project-header">
                             <h3>Engage in the Eckhart Park Playground Process</h3>
+                            <span class="featured-badge">Featured Project</span>
                         </div>
                         <div class="project-body">
                             <div class="project-status">Open for Participation</div>
-                            <p>Reimagining public spaces in Viroqua to foster connection and creativity. We're seeking input from residents, designers, and visionaries.</p>
-                            <a href="https://bit.ly/m/DragonPark" class="cta-primary">See This Project</a>
+                            <p>Reimagining public spaces in Viroqua to foster connection and creativity. We're seeking input from residents, designers, and visionaries to create an inclusive, nature-inspired playground that serves all ages and abilities.</p>
+                            <div class="featured-buttons">
+                                <button class="cta-primary ml-onclick-form" onclick="ml('show', 'HnTtkh', true)">Sign Up for Updates</button>
+                                <a href="https://bit.ly/m/DragonPark" class="cta-secondary" target="_blank">Learn More About the Project</a>
+                            </div>
                         </div>
                     </div>
-                    
+                </div>
+                
+                <!-- Other Projects Grid -->
+                <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
                             <h3>Local Business Innovation Lab</h3>
@@ -132,7 +195,7 @@
                         <div class="project-body">
                             <div class="project-status">Coming Fall 2025</div>
                             <p>Collaborative workshops helping local entrepreneurs solve challenges through creative problem-solving.</p>
-                            <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Sign Up for Updates</a>
+                            <button class="cta-primary ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Sign Up for Updates</button>
                         </div>
                     </div>
                     
@@ -143,7 +206,7 @@
                         <div class="project-body">
                             <div class="project-status">Research Phase</div>
                             <p>Building a comprehensive guide to local resources, skills, and opportunities for growth, support, and collaboration.</p>
-                            <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Contribute Your Knowledge</a>
+                            <button class="cta-primary ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Contribute Your Knowledge</button>
                         </div>
                     </div>
                 </div>
@@ -195,28 +258,28 @@
                         <div class="contact-icon">📧</div>
                         <h4>Join Our Community</h4>
                         <p>Get connected with ongoing projects, workshops, and collaboration opportunities.</p>
-                        <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Sign Up Now</a>
+                        <button class="cta-primary ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Sign Up Now</button>
                     </div>
                     
                     <div class="contact-method">
                         <div class="contact-icon">💬</div>
                         <h4>Share Your Ideas</h4>
                         <p>Have a challenge or solution you'd like to explore with the community?</p>
-                        <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Get Involved</a>
+                        <button class="cta-primary ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Get Involved</button>
                     </div>
                     
                     <div class="contact-method">
                         <div class="contact-icon">📍</div>
                         <h4>Find Us in Viroqua</h4>
                         <p>Pop-up locations throughout the community. Follow us for current spaces and events.</p>
-                        <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Get Notified</a>
+                        <button class="cta-primary ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Get Notified</button>
                     </div>
                 </div>
 
                 <div class="cta-highlight" id="join">
                     <h3>Ready to Open Your Mind?</h3>
                     <p>Join a community where curiosity meets action, and every person contributes to meaningful change.</p>
-                    <a href="YOUR_MAILERLITE_SIGNUP_URL" class="cta-primary">Join Our Community</a>
+                    <button class="cta-primary ml-onclick-form" onclick="ml('show', 'aZ5qfV', true)">Join Our Community</button>
                 </div>
             </div>
         </section>
@@ -253,5 +316,15 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1617910');
+    </script>
+    <!-- End MailerLite Universal -->
 </body>
 </html>
