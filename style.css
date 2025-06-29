@@ -197,6 +197,31 @@ button.cta-primary {
     transform: translateY(0);
 }
 
+/* Embedded Form Styling */
+.embedded-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.embedded-form-container h3 {
+    color: var(--deep-black);
+    margin-bottom: 1rem;
+}
+
+.ml-embedded {
+    margin: 0 auto;
+}
+
+/* Override MailerLite form styles */
+.ml-form-embedContainer .ml-form-embedWrapper {
+    margin: 0 auto !important;
+}
+
 /* Performance optimization */
 @media (prefers-reduced-motion: reduce) {
     * {

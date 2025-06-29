@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Test - An Open Mind Lab</title>
+</head>
+<body>
+    <h1>MailerLite Form Test Page</h1>
+    
+    <h2>Test 1: Embedded Form</h2>
+    <div class="ml-embedded" data-form="aZ5qfV"></div>
+    
+    <h2>Test 2: Button Popup</h2>
+    <button onclick="ml('show', 'aZ5qfV', true)">Test Popup Form</button>
+    
+    <h2>Test 3: Check if ML is loaded</h2>
+    <button onclick="alert(typeof ml !== 'undefined' ? 'MailerLite is loaded!' : 'MailerLite NOT loaded')">Check MailerLite</button>
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1617910');
+    </script>
+</body>
+</html>

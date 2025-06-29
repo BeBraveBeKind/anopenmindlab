@@ -63,6 +63,19 @@
     <!-- End MailerLite Universal -->
 </head>
 <body>
+    <!-- MailerLite account verification -->
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof ml !== 'undefined') {
+                console.log('MailerLite loaded successfully');
+                // Pre-load forms
+                ml('preload', 'aZ5qfV');
+                ml('preload', 'HnTtkh');
+            } else {
+                console.error('MailerLite failed to load');
+            }
+        });
+    </script>
     <header>
         <nav class="container">
             <div class="logo">
