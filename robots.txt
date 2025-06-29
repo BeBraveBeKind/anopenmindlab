@@ -1,12 +1,12 @@
 # robots.txt for An Open Mind Lab
-# https://anopenmindlab.com
+# https://anopenmindlab.org
 
 # Allow all search engines
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://anopenmindlab.com/sitemap.xml
+Sitemap: https://anopenmindlab.org/sitemap.xml
 
 # Crawl-delay (optional - uncomment if needed)
 # Crawl-delay: 1

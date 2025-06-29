@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | An Open Mind Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-404 {
+            font-size: 6rem;
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin: 0;
+        }
+        .error-title {
+            font-size: 2rem;
+            color: var(--deep-black);
+            margin: 1rem 0;
+        }
+        .error-message {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+        .error-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <h1 class="error-404">404</h1>
+            <h2 class="error-title">Looks like you got lost...</h2>
+            <p class="error-message">Sorry, the page you are looking for could not be found.</p>
+            <div class="error-buttons">
+                <a href="index.html" class="cta-primary">Back to Homepage</a>
+                <a href="index.html#connect" class="cta-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
